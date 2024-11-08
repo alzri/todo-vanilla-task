@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wdth,wght@8..144,75,100..1000&display=swap');
+
+body {
+    width: 100%;
+    margin: auto;
+    background-color: #E7E7E7;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.container, .sidebar {
+    padding: 50px 50px;
+}
+
+.sidebar {
+    height: 100%;
+    padding-bottom: 0;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #C9C9C9;
+}
+
+.sidebar h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #3F3E3E;
+    line-height: 1;
+    padding-left: 10px;
+}
+
+.sidebar .sidebar-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    height: 80vh;
+}
+
+.sidebar .sidebar-list li:last-child {
+    margin-top: auto;
+}
+
+.sidebar .sidebar-list li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.sidebar .sidebar-list i {
+    color: #626060;
+}
+
+.sidebar .sidebar-list a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #626060;
+    text-decoration: none;
+}
+
+.sidebar .sidebar-list li:hover a, .sidebar .sidebar-list li:hover i {
+    color: #262626;
+    transition: color 1s;
+    cursor: pointer;
+}
+
+.sidebar .sidebar-list li a:active, .sidebar .sidebar-list li:has(a:active) i {
+    color: #262626;
+}
+
+.sidebar .sidebar-list li:has(a:active) {
+    background-color: #E7E7E7;
+    width: 100%;
+}
+
+.navigation {
+    width: 100%;
+     display: flex;
+     gap: 15px;
+     align-items: center;
+}
+
+.navigation .new-task {
+    margin-left: auto;
+    border: none;
+    border-radius: 30px;
+    width: 115px;
+    height: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #262626;
+    color: #E7E7E7;
+}
+
+.navigation .new-task:hover {
+    background-color: #3F3E3E;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.navigation .profile {
+   border: none;
+   padding: 0;
+   width: 35px;
+   height: 35px;
+   background-color: transparent;
+}
+
+.navigation .profile:hover {
+    cursor: pointer;
+}
+
+.navigation .profile img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.content {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+.content .task-all h3, .content .task-in-progress h3, .content .task-done h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+}
+
+.content .task-all, .content .task-in-progress, .content .task-done {
+    padding: 15px 30px;
+    width: 450px;
+    max-height: 350px;
+    height: 100%;
+    background-color: #3F3E3E;
+    border: none;
+    border-radius: 45px;
+}
+
+.content .task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.content .task-list li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.content .task-list input {
+    font-family: 'Monsterrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #C9C9C9;
+    background-color: transparent;
+    border: none;
+}
+
+.content .taskt-section-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .taskt-section-top a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #C9C9C9;
+    text-decoration: none;
+}
+
+.content .taskt-section-top a:hover {
+    color: #AAAAAA;
+    transition: color 1s;
+}
+
+.wrapper-new-task {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper-new-task.hidden {
+    display: none;
+}
+
+.wrapper-new-task .new-task {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #C9C9C9;
+    padding: 30px 25px;
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.wrapper-new-task .new-task .close-btn {
+    margin-left: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3F3E3E;
+}
+
+.wrapper-new-task .new-task .close-btn:hover {
+    cursor: pointer;
+}
+
+.wrapper-new-task .new-task .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+}
+
+.wrapper-new-task .new-task .form input {
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 8px 10px;
+    outline: none;
+}
+
+.input-desc {
+    height: 40px;
+}
+
+.new-task-btns {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-task-btns button:hover {
+    cursor: pointer;
+}
+
+.form .add-btn {
+    background-color: #262626;
+    border: none;
+    border-radius: 10px;
+    color: #E7E7E7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+.form .delete-btn {
+    background-color: #8B0000;
+    border: none;
+    border-radius: 10px;
+    color: #E7E7E7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
