@@ -167,7 +167,17 @@ body {
     gap: 7px;
 }
 
-.content .task-list input {
+.content .task-list .all-list {
+    font-family: 'Monsterrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #C9C9C9;
+    background-color: transparent;
+    border: none;
+}
+
+.all-list {
     font-family: 'Monsterrat', sans-serif;
     font-size: 16px;
     font-weight: 500;

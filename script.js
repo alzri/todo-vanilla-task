@@ -9,29 +9,35 @@ function openForm() {
 };
 
 function addNewTask() {
-    document.getElementById('add-task-btn').addEventListener('click', function () {
-        const taskTitle = document.getElementById('task-title').value.trim();
-        const taskDesc = document.getElementById('task-desc').value.trim();
+    const addTaskButton = document.getElementById('add-task-btn');
+    const taskTitleInput = document.getElementById('task-title');
+    const taskDescInput = document.getElementById('task-desc');
+    const taskList = document.querySelector('.task-list.all-list');
 
-        if (taskTitle === "" || taskDesc === "") {
-            alert("Please enter both task title and description.");
-            return;
-        }
+    if (!addTaskButton.dataset.listenerAdded) {
+        addTaskButton.addEventListener('click', function () {
+            const taskTitle = taskTitleInput.value.trim();
 
-        const taskList = document.querySelector('.task-list');
-        const newTaskItem = document.createElement('li');
+            if (taskTitle === "") {
+                alert("Please enter both task title and description.");
+                return;
+            }
 
-        newTaskItem.innerHTML = `
-            <input type="checkbox">
-            <span class="task-title">${taskTitle}</span>
-        `;
+            const newTaskItem = document.createElement('li');
+            newTaskItem.innerHTML = `
+                <input type="checkbox">
+                <span class="task-title">${taskTitle}</span>
+            `;
 
-        taskList.appendChild(newTaskItem);
-        formClass.classList.add('hidden');
+            taskList.appendChild(newTaskItem);
 
-        document.getElementById('task-title').value = '';
-        document.getElementById('task-desc').value = '';
-    });
+            formClass.classList.add('hidden');
+            taskTitleInput.value = '';
+            taskDescInput.value = '';
+        });
+
+        addTaskButton.dataset.listenerAdded = 'true';
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
