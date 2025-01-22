@@ -31,7 +31,7 @@
     - Validate the username and password against localStorage
     - If the username doesn't exist, display a message: "No user found, want to register instead?" with a link to the registration page
 - **Task Management**
-    - Allow users to create new tasks by entering a task name, status, and description (either via a dialog or a separate page)
+    - Allow users to create new tasks by entering a task name and status
     - Task cards should display the task name and status, with a button to "open details"
     - Opening details shows an extended card where users can update the task status or close the card
     - Tasks should be associated with individual users, so handle task data accordingly in localStorage

@@ -157,17 +157,21 @@ body {
 }
 
 .content .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     list-style: none;
     padding: 0;
 }
 
-.content .task-list li {
+li.task-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 7px;
 }
 
-.content .task-list .all-list {
+.content .task-item .task-title {
     font-family: 'Monsterrat', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -175,6 +179,35 @@ body {
     color: #C9C9C9;
     background-color: transparent;
     border: none;
+}
+
+.content .task-list .edit-button {
+    background-color: #C9C9C9;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 8px;
+    font-family: 'Monsterrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: #262626;
+}
+
+.content .task-list .status-dropdown {
+    background-color: #C9C9C9;
+    border: none;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-family: 'Monsterrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: #262626;
+    outline: none;
+}
+
+.content .task-list .edit-button:hover, .content .task-list .status-dropdown:hover {
+    cursor: pointer;
 }
 
 .all-list {
@@ -207,29 +240,28 @@ body {
     transition: color 1s;
 }
 
-.wrapper-new-task {
+.wrapper-task {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.wrapper-new-task.hidden {
+.wrapper-task.hidden {
     display: none;
 }
 
-.wrapper-new-task .new-task {
+.wrapper-task .new-task {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     background-color: #C9C9C9;
     padding: 30px 25px;
     border-radius: 25px;
     width: 300px;
-    height: 250px;
 }
 
-.wrapper-new-task .new-task .close-btn {
+.close-btn {
     margin-left: auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -237,18 +269,18 @@ body {
     color: #3F3E3E;
 }
 
-.wrapper-new-task .new-task .close-btn:hover {
+.close-btn:hover {
     cursor: pointer;
 }
 
-.wrapper-new-task .new-task .form {
+.wrapper-task .new-task .form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     height: 100%;
 }
 
-.wrapper-new-task .new-task .form input {
+.wrapper-task .new-task .form input {
     border: 1px solid #fff;
     background-color: transparent;
     border-radius: 10px;
@@ -290,4 +322,27 @@ body {
     font-size: 11px;
     font-weight: 500;
     padding: 5px 15px;
+}
+
+.task-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #C9C9C9;
+    padding: 30px 25px;
+    border-radius: 25px;
+    width: 300px;
+}
+
+.task-editor .form {
+    display: grid;
+    gap: 30px;
+}
+
+.task-editor .form input {
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 8px 10px;
+    outline: none;
 }

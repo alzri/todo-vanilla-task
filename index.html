@@ -48,26 +48,36 @@
                     <img src="./images/dean-winchester.jpg" alt="Profile image">
                 </button>
             </div>
-            <div id="new-task-form" class="wrapper-new-task hidden">
+            <div id="new-task-form" class="wrapper-task hidden">
                 <div class="new-task">
                     <span id="close-btn" class="close-btn" onclick="closeForm()">X</span>
                     <div class="form">
                         <input type="text" id="task-title" placeholder="Add title">
-                        <input type="text" id="task-desc" placeholder="Add task description">
                         <div class="new-task-btns">
-                            <button class="delete-btn">Delete</button>
                             <button type="submit" id="add-task-btn" class="add-btn" onclick="addNewTask()">Add</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div id="edit-task-form" class="wrapper-task task-editor hidden">
+                <span id="close-edit-btn" class="close-btn" onclick="closeEditForm()">X</span>
+                    <div class="form">
+                        <input type="text" id="edit-task-title" placeholder="Edit title">
+                        <div class="new-task-btns">
+                            <button class="delete-btn" onclick="deleteTask()">Delete</button>
+                            <button type="submit" id="save-task-btn" class="add-btn">Save</button>
+                        </div>
+                    </div>
+            </div>
+
             <div class="content">
                 <div class="task-all">
                     <div class="taskt-section-top">
                         <h3>All tasks</h3>
                         <a href="/all-tasks">All tasks</a>
                     </div>
-                    <ul class="task-list all-list">
+                    <ul id="all-list" class="task-list all-list">
                     </ul>
                 </div>
                 <div class="task-in-progress">
@@ -75,7 +85,7 @@
                         <h3>In porgress</h3>
                         <a href="/in-progress">All tasks</a>
                    </div>
-                    <ul class="task-list progress-list">
+                    <ul id="progress-list" class="task-list progress-list">
                     </ul>
                 </div>
                 <div class="task-done">
@@ -83,7 +93,7 @@
                         <h3>Done</h3>
                         <a href="/done">All tasks</a>
                     </div>
-                    <ul class="task-list done-list">
+                    <ul id ="done-list" class="task-list done-list">
                     </ul>
                 </div>
             </div>
