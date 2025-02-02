@@ -3,7 +3,7 @@
 body {
     width: 100%;
     margin: auto;
-    background-color: #E7E7E7;
+    background-color: #FFF;
 }
 
 .wrapper {
@@ -345,4 +345,126 @@ li.task-item {
     border-radius: 10px;
     padding: 8px 10px;
     outline: none;
+}
+
+
+/*Register page style*/
+
+.nav {
+    display: flex;
+    background-color: #212121;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.nav_logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #C9C9C9;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+form h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    display: grid;
+    justify-content: center;
+}
+
+.hidden-form {
+    display: none;
+}
+
+form .input {
+    height: 100%;
+    width: 250px;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+    display: flex;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+form input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    outline: 0;
+}
+
+.option-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option-field .checkbox {
+    margin: 15px 0;
+    display: grid;
+    row-gap: 15px;
+}
+
+.option-field .checkbox {
+    display: flex;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: #0b0217;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.option-field .checkbox input {
+    width: fit-content;
+    margin: 0;
+}
+
+.forgot-password, .signin-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #0b0217;
+    text-decoration: none;
+}
+
+.signin-text a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-button, .signin-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #212121;
+    color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 0;
+}
+
+.signin-button {
+    margin-top: 20px;
+}
+
+.uil-eye, .uil-eye-slash {
+    font-size: 20px;
+}
+
+.uil-eye:hover, .uil-eye-slash:hover {
+    cursor: pointer;
 }
