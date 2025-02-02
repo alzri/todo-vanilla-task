@@ -4,101 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <title>Todo list Vanilla task</title>
+    <title>Login & Registration Form</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
 <body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <div>
-                <h1>TODO </h1>
-                <ul class="sidebar-list">
-                    <li>
-                        <i class="fa-solid fa-house"></i>
-                        <a href="/">Dashboard</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-list-check"></i>
-                        <a href="/all-tasks">All tasks</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-bars-progress"></i>
-                        <a href="/in-progress">In progress tasks</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <a href="/done">Done tasks</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-user"></i>
-                        <a href="/profile">Profile</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <a href="/logout">Log out</a>
-                    </li>
-                </ul>
-            </div>
+    <header class="header">
+        <nav class="nav">
+          <a href="#" class="nav_logo">TO DO List</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <div id="login-form" class="login-form">
+            <form action="#">
+                <h2>Login</h2>
+        
+                <div class="input email">
+                    <i class="uil uil-envelope-alt email"></i>
+                    <input type="email" placeholder="Your email" required>
+                </div>
+        
+                <div class="input password">
+                    <i class="uil uil-lock password"></i>
+                    <input type="password" placeholder="Your password" required>
+                    <i class="uil uil-eye-slash show-hide-icon"></i>
+                </div>
+        
+                <div class="option-field">
+                    <span class="checkbox">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">Remember me</label>
+                    </span>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+        
+                <button type="button" class="login-button">Login</button>
+        
+                <div class="signin-section">
+                    <p class="signin-text">Don't have an account? <a href="#" id="signin-link">Signup</a></p>
+                </div>
+            </form>
         </div>
-        <div class="container">
-            <div class="navigation">
-                <button id="new-task" class="new-task" onclick="openForm()">+ Create</button>
-                <button class="profile">
-                    <img src="./images/dean-winchester.jpg" alt="Profile image">
-                </button>
-            </div>
-            <div id="new-task-form" class="wrapper-task hidden">
-                <div class="new-task">
-                    <span id="close-btn" class="close-btn" onclick="closeForm()">X</span>
-                    <div class="form">
-                        <input type="text" id="task-title" placeholder="Add title">
-                        <div class="new-task-btns">
-                            <button type="submit" id="add-task-btn" class="add-btn" onclick="addNewTask()">Add</button>
-                        </div>
-                    </div>
+    
+        <div id="signin-form" class="signin-form hidden-form">
+            <form action="#">
+                <h2>Sign up</h2>
+        
+                <div class="input email">
+                    <i class="uil uil-envelope-alt email"></i>
+                    <input type="email" placeholder="Your email" required>
                 </div>
-            </div>
-
-            <div id="edit-task-form" class="wrapper-task task-editor hidden">
-                <span id="close-edit-btn" class="close-btn" onclick="closeEditForm()">X</span>
-                    <div class="form">
-                        <input type="text" id="edit-task-title" placeholder="Edit title">
-                        <div class="new-task-btns">
-                            <button class="delete-btn" onclick="deleteTask()">Delete</button>
-                            <button type="submit" id="save-task-btn" class="add-btn">Save</button>
-                        </div>
-                    </div>
-            </div>
-
-            <div class="content">
-                <div class="task-all">
-                    <div class="taskt-section-top">
-                        <h3>All tasks</h3>
-                        <a href="/all-tasks">All tasks</a>
-                    </div>
-                    <ul id="all-list" class="task-list all-list">
-                    </ul>
+        
+                <div class="input password">
+                    <i class="uil uil-lock password"></i>
+                    <input type="password" placeholder="Create password" required>
+                    <i class="uil uil-eye-slash show-hide-icon"></i>
                 </div>
-                <div class="task-in-progress">
-                   <div class="taskt-section-top">
-                        <h3>In porgress</h3>
-                        <a href="/in-progress">All tasks</a>
-                   </div>
-                    <ul id="progress-list" class="task-list progress-list">
-                    </ul>
+        
+                <div class="input password">
+                    <i class="uil uil-lock password"></i>
+                    <input type="password" placeholder="Confirm password" required>
+                    <i class="uil uil-eye-slash show-hide-icon"></i>
                 </div>
-                <div class="task-done">
-                    <div class="taskt-section-top">
-                        <h3>Done</h3>
-                        <a href="/done">All tasks</a>
-                    </div>
-                    <ul id ="done-list" class="task-list done-list">
-                    </ul>
+    
+                <button type="button" id="signin-button" class="signin-button">Signup</button>
+    
+                <div class="login-section">
+                    <p class="signin-text">Already have an account? <a href="#" id="login-link">Login</a></p>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./register.js"></script>
 </body>
 </html>
